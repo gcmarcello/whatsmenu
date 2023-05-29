@@ -24,6 +24,7 @@ export class ObjectFilterComponent {
   excludeKeys(letter: string) {
     if (!letter) {
       this.newObjectListString = JSON.stringify(this.objectList);
+      return;
     }
     this.newObjectList = this.objectList;
     for (const property in this.newObjectList) {
