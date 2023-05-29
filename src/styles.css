@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+main {
+  margin-bottom: 100px;
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-bottom: 200px;
+  }
+}
