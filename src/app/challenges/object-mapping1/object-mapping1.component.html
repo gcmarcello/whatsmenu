@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>Criar novo array contendo apenas nome e idade</p>
+      <p>
+        {{
+          "[ {id: 1, nome: 'Liz', idade: 2}, {id: 2, nome: 'Thaís', idade: 32}, {id: 3, nome: 'Jonathan', idade: 30}, {id: 4, nome: 'Thainá', idade: 29}, {id: 5, nome: 'Fabiano', idade: 45}]"
+        }}
+      </p>
+    </div>
+    <div class="col-4 d-flex my-auto justify-content-center align-items-center">
+      <button class="btn btn-primary" (click)="createNewArray()">
+        Mapear nova Array
+      </button>
+    </div>
+  </div>
+  <div *ngIf="newUserListString !== null" class="row">
+    <div class="col-8">
+      <h3>Mapeamento:</h3>
+      <p>{{ newUserListString }}</p>
+    </div>
+  </div>
+</div>

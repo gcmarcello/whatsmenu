@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <label class="form-label" for="Escolha"
+        >Escolha um número para filtrar os números ímpares partindo de 0</label
+      >
+      <input
+        class="form-control"
+        id="number"
+        type="number"
+        #filterOddNumber
+        value="30"
+        min="0"
+      />
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <button
+        class="btn btn-primary flex-fill mt-2 mt-lg-2"
+        (click)="filterOddNumbers(filterOddNumber.value)"
+      >
+        Filtrar
+      </button>
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <button
+        class="btn btn-secondary flex-fill mt-2 mt-lg-2"
+        (click)="clearChallenge()"
+      >
+        Limpar
+      </button>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let number of numbers">
+          {{ number }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div *ngIf="error !== null" class="error-message">
+      {{ error }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <p class="form-label">
+        Escolha uma letra para remover todas as propriedades do objeto abaixo
+        que começam com ela
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <p>
+        {{
+          '{"jason": "Jason", "thais": "Thaís", "liz": "Liz", "jennei": "Jennei", "jenyffer": "Jennyfer", "joao": "João", "bola": "Bola", "gato": "Gato", "jaguar": "Jaguar"}'
+        }}
+      </p>
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <input class="form-control" #letter placeholder="Letra" type="text" />
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <button
+        class="btn btn-primary flex-fill mt-2 mt-lg-2"
+        (click)="excludeKeys(letter.value)"
+      >
+        Filtrar
+      </button>
+    </div>
+  </div>
+  <div *ngIf="newObjectListString" class="row">
+    <div class="col-12 mt-5">
+      <h3>Filtro:</h3>
+      <p>
+        {{ newObjectListString }}
+      </p>
+    </div>
+  </div>
+</div>

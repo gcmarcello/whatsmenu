@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <p>Mapear array para gerar tags H3 com as propriedades do objeto.</p>
+      <p>
+        {{
+          "[ {id: 1, nome: 'Liz', idade: 2}, {id: 2, nome: 'Thaís', idade: 32}, {id: 3, nome: 'Jonathan', idade: 30}, {id: 4, nome: 'Thainá', idade: 29}, {id: 5, nome: 'Fabiano', idade: 45}]"
+        }}
+      </p>
+    </div>
+    <div class="col-4 d-flex my-auto justify-content-center align-items-center">
+      <button class="btn btn-primary" (click)="toggleH3()">
+        {{ !showH3 ? "Mostrar H3" : "Esconder H3" }}
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12" *ngIf="showH3">
+      <h3>Mapeamento:</h3>
+      <h3 *ngFor="let user of userList">
+        Name: {{ user.nome }}, Age: {{ user.idade }}
+      </h3>
+    </div>
+  </div>
+</div>

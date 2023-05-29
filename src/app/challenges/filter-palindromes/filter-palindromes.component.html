@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <label class="form-label" for="Escolha"
+        >Insira palavras para filtrar as que são palíndromos (use vírgula para
+        separar as palavras).</label
+      >
+      <textarea class="form-control" id="palindromes" #filterPalindrome>
+arara, amor, asa, longo, ele, dinossáuro, esse, peppa, mamam,  tartaruga,  bandolin,  matam,  desodorante,  mundo,  metem,  terra,  água,  mirim,  fogo,  sopapos</textarea
+      >
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <button
+        class="btn btn-primary flex-fill mt-2 mt-lg-2"
+        (click)="filterPalindromes(filterPalindrome.value)"
+      >
+        Filtrar
+      </button>
+    </div>
+    <div class="col-12 col-lg-2 d-flex align-items-end mb-0">
+      <button
+        class="btn btn-secondary flex-fill mt-2 mt-lg-2"
+        (click)="clearChallenge()"
+      >
+        Limpar
+      </button>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div class="col-12">
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let word of words">
+          {{ word }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row mt-2">
+    <div *ngIf="error !== null" class="error-message">
+      {{ error }}
+    </div>
+  </div>
+</div>
